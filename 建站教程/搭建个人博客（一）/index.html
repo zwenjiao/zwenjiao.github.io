@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="搭建个人博客（一）">
+    <meta name="author" content="">
+
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>搭建个人博客（一） &middot; zwenjiao&#39;s blog</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://zwenjiao.github.io/css/theme/default.css">
+    
+
+    <link rel="stylesheet" href="http://zwenjiao.github.io/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://zwenjiao.github.io/css/style.css">
+
+
+    
+    <script src="http://zwenjiao.github.io/js/jquery.min-2.1.4.js"></script>
+    <script src="http://zwenjiao.github.io/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="zwenjiao&#39;s blog" />
+</head>
+<body lang="en">
+    
+    <div class="container">
+    <div class="row">
+        <div class="navbar navbar-default " role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://zwenjiao.github.io">zwenjiao&#39;s blog</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://zwenjiao.github.io/post/">
+					Home</a></li>
+					
+					<li><a href="http://zwenjiao.github.io/hugo建站">hugo建站</a></li>
+
+                    <li><a href="http://zwenjiao.github.io/建站教程/">建站教程</a></li>
+
+					
+					 <li><a href="http://zwenjiao.github.io/技术杂烩/">技术杂烩</a></li>
+
+
+					 <li><a href="http://zwenjiao.github.io/业余爱好/">业余爱好</a></li>
+                      
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<h3>搭建个人博客（一）</h3>
+				<span class="label label-primary">Sun, Mar 15, 2015</span> in 
+				 using tags
+				
+			</small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<br>
+			<p>对于想要建立自己博客的一些小白来说，会搜到各种各样的建站方法，看完之后难免很纠结，到底要用哪一种方法建站，究竟哪种适合自己。本教程会先简述建站的一些概念，然后讲由简到难几种建站方法，希望想要建立自己博客的人看过之后能有一个清晰的思路，找到适合自己的建站方法。</p>
+
+<p>本教程会用比较易懂的白话来解释一些概念，所以看起来可能有些不专业，哈哈哈哈（我竟然能笑出来，太中二了）！</p>
+
+<p>本教程侧重于讲原理和方法，一些基本的教程大家可以到网上自己搜，有我觉得好的教程我也会贴上链接！</p>
+
+<p>PS：如果教程中有不合理的地方，希望大家指出，毕竟这些经验是妹子本人的一些看法！</p>
+
+<h2 id="建站三要素:be5369507fb21223dcda80dfce6008f6"><strong>建站三要素：</strong></h2>
+
+<p>要想建立一个个人网站，需要三要素：</p>
+
+<p>1、一个网站的完整程序</p>
+
+<p>2、一个托管网站代码的空间</p>
+
+<p>3、一个域名</p>
+
+<p>很多人就开始百度什么是空间，什么是域名，然后搜到的都是一堆专业术语……</p>
+
+<p>其实很简单，首先你肯定得有一套完整的程序，这是毋庸置疑的，</p>
+
+<p>你有了网站程序之后，就需要一个地方来替你保管程序代码，并且无时不刻的提供服务，确保任何时候别人都能访问到你的网站（简直就是战斗机，都不带休息的！），这就需要服务器。比如学校的网站是在学校的服务器上运行的，可是作为个人来说你肯定不会为了一个个人博客来买超贵的服务器放在家里，网上的一些空间售卖商就解决了这个问题，这些服务商有很多的服务器，你可以根据自己的需要来购买一定的大小之类的，具体购买时需注意的问题下面会讲。</p>
+
+<p>说到域名，网上会说什么IP映射什么的……是不是又懵逼了！简单来说，你可以认为互联网中的每台电脑都是独一无二的，都有一个自己的IP，代表你自己的电脑，上面你购买了空间之后，服务器提供商也会给你网站提供一个IP，但是捏，IP都是像127.0.0.1这样的，都是数字，试问谁能记住你的IP？所以你就需要给你的网站改个名字了！比如你叫王小明可能没人能记得住你，但是你叫二狗子，多好记，多个性的名字，别人一下就记住了！但是呢，现实生活中二狗子可能有许多个，只要爹妈愿意，我们每个人都可以是二狗子。但是互联网就不是这样了，名字是要钱的，每个名字只能属于一个网站，不然的话，我的网站叫www.baidu.com，那别人搜百度一搜就搜到我的博客，那我岂不是一下就火了，赢取白富美，走上人生巅峰？</p>
+
+<h2 id="静态网站和动态网站的区别:be5369507fb21223dcda80dfce6008f6"><strong>静态网站和动态网站的区别：</strong></h2>
+
+<p>简单的说，静态网站就是一些html文件，你写好之后，把html文件上传到服务器，每次有人访问，直接从服务器上弄下来（弄这个字~我怎么这么有文化……）这个页面你只能看，你不能评论……反正就是只能看！
+所以呢，要写一个静态网站你只要掌握一
+些前端的知识就可以，比如html，css，js等（如果有些小老婆们不想写，不怕，还有静态网站生成器，下面会介绍！）</p>
+
+<p>动态网站，那马云大大的老婆们一听就会懂，静态页面不是只能看吗，动态页面你还能买买买，比如你浏览完这件衣服了，看完要买，点立即购买就能买……这个时候涉及到什么捏，首先，你买了一件，那卖家的库存是不是少一件呢？谁来管这些数据，这就需要数据库了，数据库说白了就是一个存储数据的地方，你购买一件衣服之后，卖家的数据库这件衣服的库存量那一栏就需要减1，已卖出那一栏就需要减1，等等！可是捏，数据库只负责存储数据，你买了衣服之后，谁来修改数据库里面的数据呢，这就需要后台的控制程序了，网站后台的编程语言有很多，比如php，java等，不同的后台编程语言需要不同的服务器，比如php是apache，java是tomcat！这个时候服务器每次返回的页面是不一样的，比如你买了一件，服务器返回的就是购买一件之后的页面，另一个人买了两件，那另一个人看到的是购买两件后返回的页面，两个用户看到的界面是不一样的。
+而上面的静态网站，无论是谁访问，服务器返回的界面是一样的，因为他不需要和用户交互，而动态页面需要根据每个人的需求给每个人不同的响应！</p>
+
+<p>现在我们来总结一下，静态网站只能看，所以只要会写前端就行，只需要服务器，服务器的种类一般都可以！
+动态网站不仅要看，还要买买买，所以需要数据库存储数据，还需要后台程序控制，不同的后台语言对应不同的服务器和运行环境！</p>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>
+</div>
+
+    <div class="container">
+        <div class="row col-md-12">
+            <footer>
+                <div class="pull-left">
+                    <p>
+                        &copy;  ~ Powered By <a href="http://hugo.spf13.com">Hugo</a> - version: 0.15 ~ <a href="http://zwenjiao.github.io/license">License</a>
+                    </p>
+                </div>
+
+                
+                <div class="pull-right">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    
+    </body>
+</html>
+

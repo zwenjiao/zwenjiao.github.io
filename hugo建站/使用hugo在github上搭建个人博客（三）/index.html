@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="使用hugo在github搭建个人博客（三）">
+    <meta name="author" content="">
+
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>使用hugo在github搭建个人博客（三） &middot; zwenjiao&#39;s blog</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://zwenjiao.github.io/css/theme/default.css">
+    
+
+    <link rel="stylesheet" href="http://zwenjiao.github.io/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://zwenjiao.github.io/css/style.css">
+
+
+    
+    <script src="http://zwenjiao.github.io/js/jquery.min-2.1.4.js"></script>
+    <script src="http://zwenjiao.github.io/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="zwenjiao&#39;s blog" />
+</head>
+<body lang="en">
+    
+    <div class="container">
+    <div class="row">
+        <div class="navbar navbar-default " role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://zwenjiao.github.io">zwenjiao&#39;s blog</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://zwenjiao.github.io/post/">
+					Home</a></li>
+					
+					<li><a href="http://zwenjiao.github.io/hugo建站">hugo建站</a></li>
+
+                    <li><a href="http://zwenjiao.github.io/建站教程/">建站教程</a></li>
+
+					
+					 <li><a href="http://zwenjiao.github.io/技术杂烩/">技术杂烩</a></li>
+
+
+					 <li><a href="http://zwenjiao.github.io/业余爱好/">业余爱好</a></li>
+                      
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<h3>使用hugo在github搭建个人博客（三）</h3>
+				<span class="label label-primary">Thu, Sep 3, 2015</span> in 
+				 using tags
+				
+			</small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<br>
+			
+
+<h2 id="博客的部署与更新:1f0ebe61551ba051176e76b701c159ad">博客的部署与更新</h2>
+
+<p><strong>git安装与教程</strong></p>
+
+<p>廖雪峰的git教程，通俗易懂  www.liaoxuefeng.com/
+要完成下面的操作只需要看 安装git、创建版本库、远程仓库这几部分即可。</p>
+
+<p><strong>生成 public 目录</strong></p>
+
+<p>在 Github 上创建一个 用户名.github.io 的 Repository。</p>
+
+<p>在本地生成public，如果之前已经生成过，记得要先删除。</p>
+
+<pre><code>hugo --baseUrl=&quot;http://zwenjiao.github.io/
+</code></pre>
+
+<p><strong>推送到github远程仓库</strong></p>
+
+<pre><code>$ cd public 
+$ git init  
+$ git remote add origin https://github.com/zwenjiao/zwenjiao.github.io.git // 添加远程仓库
+$ git add -A  // 跟踪所有文件
+$ git commit -m &quot;first commit&quot; // 提交
+$ git push -u origin master // 推送到远程仓库
+</code></pre>
+
+<p><strong>注意</strong>：</p>
+
+<p>git使用ssh加密的，remote语句改为</p>
+
+<pre><code>$ git remote add origin git@github.com：zwenjiao/zwenjiao.github.io.git
+</code></pre>
+
+<p>push出错时语句改为</p>
+
+<pre><code>$ git push -u origin master -f  //强制覆盖
+</code></pre>
+
+<p>此时访问 用户名.github.io就可以在线查看你的网站了。</p>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>
+</div>
+
+    <div class="container">
+        <div class="row col-md-12">
+            <footer>
+                <div class="pull-left">
+                    <p>
+                        &copy;  ~ Powered By <a href="http://hugo.spf13.com">Hugo</a> - version: 0.15 ~ <a href="http://zwenjiao.github.io/license">License</a>
+                    </p>
+                </div>
+
+                
+                <div class="pull-right">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    
+    </body>
+</html>
+

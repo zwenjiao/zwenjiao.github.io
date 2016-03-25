@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="手机otg线制作教程">
+    <meta name="author" content="">
+
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>手机otg线制作教程 &middot; zwenjiao&#39;s blog</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://zwenjiao.github.io/css/theme/default.css">
+    
+
+    <link rel="stylesheet" href="http://zwenjiao.github.io/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://zwenjiao.github.io/css/style.css">
+
+
+    
+    <script src="http://zwenjiao.github.io/js/jquery.min-2.1.4.js"></script>
+    <script src="http://zwenjiao.github.io/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="zwenjiao&#39;s blog" />
+</head>
+<body lang="en">
+    
+    <div class="container">
+    <div class="row">
+        <div class="navbar navbar-default " role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://zwenjiao.github.io">zwenjiao&#39;s blog</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://zwenjiao.github.io/post/">
+					Home</a></li>
+					
+					<li><a href="http://zwenjiao.github.io/hugo建站">hugo建站</a></li>
+
+                    <li><a href="http://zwenjiao.github.io/建站教程/">建站教程</a></li>
+
+					
+					 <li><a href="http://zwenjiao.github.io/技术杂烩/">技术杂烩</a></li>
+
+
+					 <li><a href="http://zwenjiao.github.io/业余爱好/">业余爱好</a></li>
+                      
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<h3>手机otg线制作教程</h3>
+				<span class="label label-primary">Thu, Sep 11, 2014</span> in 
+				 using tags
+				
+			</small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<br>
+			<p><strong>OTG数据线与普通USB数据线的区别：</strong></p>
+
+<p>USB数据线已是日常生活中司空见惯的必备数码配件，然而随着手机行业的快速发展，OTG线也逐渐进入大众的视野。OTG线跟USB线长得如此相似，那么它们又有什么区别呢？</p>
+
+<p>简单地说，有了OTG数据线，你的手机就无需经过PC或笔记本，可直接通过OTG数据线与U盘、鼠标、键盘等USB设备连接，也就是说手机可直接接U盘查找资料、接鼠标玩游戏、接键盘快速打字、接相机浏览图片，即拍即传。换句话说，OTG线省去了各个设备必须经过电脑才能互通信息的步骤，既扩展了手机功能，也让我们更便利地与互联网相连，更适应这个移动互联时代的发展。平板等其他带有OTG功能的数码设备也同样适用。当然，前提是你的数码设备得支持OTG功能哦！</p>
+
+<p>OTG线与普通USB线的区别还在于：USB数据线连接电脑的时候，外接设备由电脑供电，而OTG数据线连接U盘等设备的时候，手机等主体对象必须给U盘等外设供电。</p>
+
+<p>那么手机是如何识别USB数据线和OTG数据线的呢？拆解两根线之后，你会发现USB数据线的第4pin是悬空的，OTG数据线的第4pin是短接到地的，手机芯片应该是通过第4pin判断插入的是OTG数据线还是USB数据线，并以此来决定是否打开OTG供电功能。</p>
+
+<p>传统 usb 接口处pin 有：
+1. vbus (5v)2. GND3. D+4. D-</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/otg.png" alt="" /></p>
+
+<p>OTG线只有Micro接口, 总共出5pin1. vbus2. GND3. D+4. D-5. ID</p>
+
+<p>USB线材里面跑的都是4条线，区别在于接头。手机/平板都使用Micro USB接头, 接普通USB线，ID pin悬空， 所以运作在 client/peripheral mode。如果把ID GND接地，就会进入 host mode。</p>
+
+<p><strong>手机OTG线制作教程</strong></p>
+
+<p>1.需要材料，手机数据线一条，USB母座一个。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/1.jpg" alt="" /></p>
+
+<p>2.先看看下面的接线图，原理其实很简单</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/2.jpg" alt="" /></p>
+
+<p>3.把数据线剪开两段，小心拆开USB小头。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/3.jpg" alt="" /></p>
+
+<p>4.连接手机的USB小头的焊接点可能会有所不同。
+自己就发现两种，一种是一排4个焊点，一种是两排5个焊点。
+但其实连接手机的USB小头触点都是有5个的。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/4.jpg" alt="" /></p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/5.jpg" alt="" /></p>
+
+<p>5.一排4个焊点这种接线有些麻烦，可以把接头上面的铁壳拆下，
+在触点中间位置点焊一下短接GND和ID触点，注意不要把其它触点也短接了。</p>
+
+<p>两排5个焊点这种短接就比较简单。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/6.jpg" alt="" />
+<img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/7.jpg" alt="" /></p>
+
+<p>6.USB母座接线。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/8.jpg" alt="" /></p>
+
+<p>7.最后成品</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/9.jpg" alt="" /></p>
+
+<p>8接上5V的USB电源，插上鼠标后，屏幕就有个鼠标箭头了。
+鼠标左键和滑轮都能用，右键没作用。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/10.jpg" alt="" /></p>
+
+<p>9.连接U盘时，要先接电源，再接U盘，最后接手机，
+不成功的多连接几次，最后在手机设置-存储就能看到U盘容量。
+用文件管理器可以打开U盘，复制、剪切、粘贴，
+播放里面的音频文件都没问题。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/otg/11.jpg" alt="" /></p>
+
+<p>来源：</p>
+
+<p><a href="http://jingyan.baidu.com/article/02027811860ae81bcc9ce5af.html">http://jingyan.baidu.com/article/02027811860ae81bcc9ce5af.html</a></p>
+
+<p><a href="http://bbs.gfan.com/android-7242405-1-1.html">http://bbs.gfan.com/android-7242405-1-1.html</a></p>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>
+</div>
+
+    <div class="container">
+        <div class="row col-md-12">
+            <footer>
+                <div class="pull-left">
+                    <p>
+                        &copy;  ~ Powered By <a href="http://hugo.spf13.com">Hugo</a> - version: 0.15 ~ <a href="http://zwenjiao.github.io/license">License</a>
+                    </p>
+                </div>
+
+                
+                <div class="pull-right">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    
+    </body>
+</html>
+

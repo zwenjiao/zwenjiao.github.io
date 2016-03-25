@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="使用hugo在github搭建个人博客（二）">
+    <meta name="author" content="">
+
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>使用hugo在github搭建个人博客（二） &middot; zwenjiao&#39;s blog</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://zwenjiao.github.io/css/theme/default.css">
+    
+
+    <link rel="stylesheet" href="http://zwenjiao.github.io/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://zwenjiao.github.io/css/style.css">
+
+
+    
+    <script src="http://zwenjiao.github.io/js/jquery.min-2.1.4.js"></script>
+    <script src="http://zwenjiao.github.io/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="zwenjiao&#39;s blog" />
+</head>
+<body lang="en">
+    
+    <div class="container">
+    <div class="row">
+        <div class="navbar navbar-default " role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://zwenjiao.github.io">zwenjiao&#39;s blog</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://zwenjiao.github.io/post/">
+					Home</a></li>
+					
+					<li><a href="http://zwenjiao.github.io/hugo建站">hugo建站</a></li>
+
+                    <li><a href="http://zwenjiao.github.io/建站教程/">建站教程</a></li>
+
+					
+					 <li><a href="http://zwenjiao.github.io/技术杂烩/">技术杂烩</a></li>
+
+
+					 <li><a href="http://zwenjiao.github.io/业余爱好/">业余爱好</a></li>
+                      
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<h3>使用hugo在github搭建个人博客（二）</h3>
+				<span class="label label-primary">Thu, Sep 3, 2015</span> in 
+				 using tags
+				
+			</small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<br>
+			
+
+<h2 id="一-安装hugo:11b2c1c8d9fd3aeee54788bfcf97bb07">一、安装Hugo</h2>
+
+<p>Hugo的安装方式有两种，一种是直接下载编译好的Hugo二进制文件。</p>
+
+<p>另一种方式是获取Hugo的源码，自己编译。</p>
+
+<p><strong>本文演示二进制安装：</strong></p>
+
+<p>Hugo二进制下载地址：<a href="https://github.com/spf13/hugo/releases">https://github.com/spf13/hugo/releases</a></p>
+
+<p><strong>注意：</strong>下载下来后，解压，将解压后的文件夹名称和文件夹里面的.exe文件都改为同一个名称，否则hugo无法运行。（本文都改为hugo）</p>
+
+<p>接下来配置path路径，右击计算机-属性-高级系统设置-高级-环境变量-系统变量，找到path，添加hugo路径，我把hugo文件夹放到了D盘下面，所以添加D:\hugo</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/blog/1.png" alt="" /></p>
+
+<p>此时点击hugo.exe,几秒之后会闪退，我们看打开的命令行，显示应该在cmd里面打开hugo.exe，</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/blog/2.png" alt="" /></p>
+
+<p>于是我们打开cmd，切换到hugo所在目录，输入hugo回车，此时出现error，不要慌，让我们看看错误内容，它提示我们应该建立一个站点了。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/blog/3.png" alt="" /></p>
+
+<h2 id="二-生成一个简单网站:11b2c1c8d9fd3aeee54788bfcf97bb07">二、生成一个简单网站</h2>
+
+<p><strong>于是我们来建立站点试试</strong>：</p>
+
+<p>输入下面的命令，回车</p>
+
+<pre><code>hugo new site blog
+</code></pre>
+
+<p>然后在hugo下会生成一个blog文件夹，里面会自动生成这样一个目录结构：</p>
+
+<ul>
+<li><p>content/     内容，存放你写的markdown文章</p></li>
+
+<li><p>layouts/      网站的模板文件</p></li>
+
+<li><p>static/       静态文件，图片，js, css</p></li>
+
+<li><p>archetypes/   针对类型的内容配置</p></li>
+
+<li><p>config.toml   站点的配置文件，也可以用yaml, json格式</p></li>
+</ul>
+
+<hr />
+
+<p>此时的blog什么都没有，让我们来加点东西</p>
+
+<p><strong>添加内容</strong></p>
+
+<p>进入blog目录</p>
+
+<pre><code> cd blog
+
+ hugo new post/first.md
+</code></pre>
+
+<p>执行完后，会在content/post目录自动生成一个MarkDown格式的first.md文件：</p>
+
+<pre><code>+++
+date = &quot;2015-07-14T07:32:44-07:23&quot;
+draft = true
+title = &quot;first&quot;
++++
+Content of the file goes here
+</code></pre>
+
+<p>+++可以替换为Jekyll一样的&mdash;</p>
+
+<p>我们可以在正文处添加内容11111</p>
+
+<p><strong>注意：</strong>
+drafe是草稿，在运行之前要改为true，或者删除这一行，否则在启动server时若没有指定显示草稿，默认为在网页上不显示。</p>
+
+<pre><code>+++
+date = &quot;2015-07-14T07:32:44-07:23&quot;
+draft = true
+title = &quot;first&quot;
++++
+11111
+</code></pre>
+
+<p>现在我们让我们启动服务</p>
+
+<pre><code>hugo server
+</code></pre>
+
+<p>打开网页，输入127.0.0.1：1313或localhost：1313，然而什么都没有，那是因为还没有网站模板。</p>
+
+<p><strong>添加模板</strong></p>
+
+<p>让我们用git从github上面把hugo的主题下载到本地。</p>
+
+<p>打开git-bash.exe，切换到blog目录</p>
+
+<pre><code>cd d:
+cd hugo\blog
+git clone --recursive https://github.com/spf13/hugoThemes themes
+</code></pre>
+
+<p>完成以后我们会看到blog目录下多了一个theme目录，里面每个文件夹都是一个主题。</p>
+
+<p>随便打开一个主题，我们会发现共有的目录为：</p>
+
+<ul>
+<li>images        存放此模板的网站效果图</li>
+
+<li><p>layouts</p>
+
+<p>_default  存放默认页面，一般为single.html（正文页面），list.html（列表页面）</p>
+
+<p>partials  存放页面组件，例如head.html、footer.html等</p></li>
+
+<li><p>404.html      404出错页面</p></li>
+
+<li><p>index.html    默认页面</p></li>
+</ul>
+
+<p>通过浏览不同主题的images效果图，我最终选了hugo-multi-bootswatch这个主题，特别简洁。</p>
+
+<p>我们可以通过修改config.toml来应用主题。</p>
+
+<pre><code>baseurl = &quot;http://zwenjiao.github.io/&quot; #替换为自己的网站链接
+languageCode = &quot;en-us&quot;
+title = &quot;zwenjiao's blog&quot;      #标题
+theme=&quot;hugo-multi-bootswatch&quot;    #主题
+</code></pre>
+
+<p>也可以在启动server时应用主题。</p>
+
+<pre><code>hugo server --theme=hugo-multi-bootswatch --buildDrafts --watch
+</code></pre>
+
+<p>代码说明：</p>
+
+<pre><code>* --theme 用于选择主题，如果在配置文件中选择了主题，这里就不需要使用了
+* --buildDrafts 用于是否显示草稿文章
+* --watch 用于实时监控变化，方便调试
+</code></pre>
+
+<p>此时我们可以看到网页已经有了效果。</p>
+
+<p><img src="https://raw.githubusercontent.com/zwenjiao/makedownphoto/master/blog/4.png" alt="" /></p>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>
+</div>
+
+    <div class="container">
+        <div class="row col-md-12">
+            <footer>
+                <div class="pull-left">
+                    <p>
+                        &copy;  ~ Powered By <a href="http://hugo.spf13.com">Hugo</a> - version: 0.15 ~ <a href="http://zwenjiao.github.io/license">License</a>
+                    </p>
+                </div>
+
+                
+                <div class="pull-right">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    
+    </body>
+</html>
+

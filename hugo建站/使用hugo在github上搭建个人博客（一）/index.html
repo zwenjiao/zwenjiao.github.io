@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="使用hugo在github搭建个人博客（一）">
+    <meta name="author" content="">
+
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>使用hugo在github搭建个人博客（一） &middot; zwenjiao&#39;s blog</title>
+
+   	
+    
+        <link rel="stylesheet" href="http://zwenjiao.github.io/css/theme/default.css">
+    
+
+    <link rel="stylesheet" href="http://zwenjiao.github.io/css/font-awesome.min.css">
+
+   	
+   	<link rel="stylesheet" href="http://zwenjiao.github.io/css/style.css">
+
+
+    
+    <script src="http://zwenjiao.github.io/js/jquery.min-2.1.4.js"></script>
+    <script src="http://zwenjiao.github.io/js/bootstrap.min-3.3.5.js"></script>
+
+    
+    <link href="" rel="alternate" type="application/rss+xml" title="zwenjiao&#39;s blog" />
+</head>
+<body lang="en">
+    
+    <div class="container">
+    <div class="row">
+        <div class="navbar navbar-default " role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://zwenjiao.github.io">zwenjiao&#39;s blog</a>
+            </div>
+            <div class="navbar-collapse collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://zwenjiao.github.io/post/">
+					Home</a></li>
+					
+					<li><a href="http://zwenjiao.github.io/hugo建站">hugo建站</a></li>
+
+                    <li><a href="http://zwenjiao.github.io/建站教程/">建站教程</a></li>
+
+					
+					 <li><a href="http://zwenjiao.github.io/技术杂烩/">技术杂烩</a></li>
+
+
+					 <li><a href="http://zwenjiao.github.io/业余爱好/">业余爱好</a></li>
+                      
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<h3>使用hugo在github搭建个人博客（一）</h3>
+				<span class="label label-primary">Thu, Sep 3, 2015</span> in 
+				 using tags
+				
+			</small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10">
+			<br>
+			
+
+<p>好久没写博客，本来打算写篇短的，写着写着觉得应该具体点，越写越多，干脆就写一个系列的长博文吧。</p>
+
+<p>网络上用hugo搭建博客教程很多，但搜到的教程不是特别详细。一般都是直接来步骤，不讲原理。本系列教程先说明建站思路，然后一步步教大家用hugo生成静态网站，并把它发布到github上。</p>
+
+<p>PS：文章不足或出错之处欢迎大家与我交流。</p>
+
+<h2 id="基本思路:3d268c38774d6f7ea01419c735c398c2">基本思路</h2>
+
+<p>1、下载安装hugo，生成静态网站。</p>
+
+<p>2、注册github账号，创建一个 用户名.github.io 的 Repository。</p>
+
+<p>3、安装git，将本地生成的public网站文件push到github远程仓库</p>
+
+<h2 id="基本介绍:3d268c38774d6f7ea01419c735c398c2">基本介绍</h2>
+
+<p><strong>hugo</strong></p>
+
+<p>Hugo是一个用Go语言编写的静态网站生成器。Hugo可以将你写好的MarkDown格式的文章自动转换为静态的网页。</p>
+
+<p>相比其他静态网站生成器，hugo有以下优点：</p>
+
+<ul>
+<li>编译后， 只有一个二进制文件，没有任何依赖 （例如jekyll，基于Ruby开发，因此，要在本地构建Ruby的开发和运行环境，然后安装jekyll。）ruby只需下载一个二进制文件，或者下载源码，编译之后就能在本地运行。hugo内置web服务器。</li>
+<li>Go语言是编译语言，运行效率高。页面生成速度最快。</li>
+<li>Windows, linux, mac兼容</li>
+</ul>
+
+<p><strong>github与git</strong></p>
+
+<p>首先说明git与gitub是两个不同的概念。</p>
+
+<p>Git是目前世界上最先进的分布式版本控制系统，它可以记录文件每次的改动，方便的进行版本管理，修改，回退。还可以方便的进行多人协作，双方每次提交只要查看对方的修改即可，由于是分布式，每个人电脑上都有一个完整的版本，所以有很强的安全性。还有强大的分支管理。</p>
+
+<p>比如你有一个文件，某次复杂的改动以后，你后悔了，想要变回去，可是改了很多处，你自己也忘记了。通过git，你可以直接查看本次提交所修改的地方，也可以直接回退到上一个版本。如果两个人一起改，通过他提交的版本，你就能直接知道他修改了哪些地方，不必浏览全部文件，一处处查找。</p>
+
+<p>长话短说，总之git很方便，很强大，我们开始说github。</p>
+
+<p>虽然git是分布式，但是也要有一台电脑充当服务器的角色，以便其他人随时都能克隆仓库到自己的电脑上，但是自己搭服务器又不现实。github就是提供Git仓库托管服务的，注册一个GitHub账号，就可以免费获得Git远程仓库。</p>
+
+<p><strong>github-pages</strong></p>
+
+<p>只有先了解github和git，我们才能请出github-pages。</p>
+
+<p>github-pages分为项目主页和个人主页。</p>
+
+<p>为了方便小白查看项目源码，github设计了Pages功能，允许用户自定义项目首页，用来替代默认的源码列表。所以，github Pages可以被认为是用户编写的、托管在github上的静态网页。
+gh-pages分支有许多模板可供选择，而且网页文件必须在gh-pages分支上。</p>
+
+<p>每个github帐号只能有一个仓库来存放个人主页，而且仓库的名字必须是username/username.github.io。然后就可以通过<a href="http://username.github.io">http://username.github.io</a>  来访问你的个人主页，不过刚建好的显示404页面，因为仓库里还没有任何东西。需要注意的是，个人主页的网站内容都在master分支上，与项目主页不同。</p>
+
+<h2 id="总结:3d268c38774d6f7ea01419c735c398c2">总结</h2>
+
+<p>我之前的教程里讲过建站三要素：程序，域名，空间。</p>
+
+<p>github为我们提供了一个无限流量的免费的空间，而且给了这个仓库一个域名（当然想用自己购买域名的也可以修改，后面教程会讲到）</p>
+
+<p>所以我们可以利用hugo来生成网站页面，通过git上传到github。</p>
+
+<p><strong>优点</strong></p>
+
+<ul>
+<li>无限流量，免费</li>
+<li>享受git的版本控制</li>
+<li>只需要利用makedown等编辑器写文章，其他的交给hugo转化，github托管，方便管理。</li>
+<li>不需要搭建复杂的本地环境，只需要下载hugo，hugo内置web服务器。</li>
+</ul>
+
+<p><strong>缺点</strong></p>
+
+<ul>
+<li>hugo生成的是静态网页，动态功能需要外部服务，比如评论用多说和disqus。</li>
+<li>它不适合大型网站，因为没有用到数据库，每运行一次都必须遍历全部的文本文件，网站越大，生成时间越长。</li>
+</ul>
+
+<p>总的来说，对于博客这种以写文章为主的中小型网站，用这种方法建站时很好的选择。</p>
+
+<p><strong>注意：</strong></p>
+
+<p>本文以在windows下为例，其他平台的可以看官方文档查看对应的命令。</p>
+
+<p>本教程中建站和关联github等，使用的用户名均为zwenjiao，请自行替换为自己的github用户名，否则git关联到的是我的仓库，但是你push不上去，因为你没有我的ssh秘钥。</p>
+
+<p>本教程以github个人主页为例。</p>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<hr>
+		</div>
+	</div>
+</div>
+
+    <div class="container">
+        <div class="row col-md-12">
+            <footer>
+                <div class="pull-left">
+                    <p>
+                        &copy;  ~ Powered By <a href="http://hugo.spf13.com">Hugo</a> - version: 0.15 ~ <a href="http://zwenjiao.github.io/license">License</a>
+                    </p>
+                </div>
+
+                
+                <div class="pull-right">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    
+    </body>
+</html>
+
